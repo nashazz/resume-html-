@@ -1,0 +1,305 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - [Your Name]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --soft-blue: #D0D8E0; 
+            --soft-pink: #F9F9F9; 
+            --steel-blue: #4682B4; 
+            --dark-blue: #4A6E82; 
+            --text-color: #333333;
+        }
+	body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            
+            background-image: url('bg_biodata_dark.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #191970 
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.85); 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--soft-blue);
+            color: var(--dark-blue);
+        }
+        
+      
+        .main-content {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 50px 20px;
+        }
+
+        .biodata-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            color: var(--text-color); 
+        }
+
+        .biodata-container h1 {
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--soft-blue);
+            padding-bottom: 10px;
+        }
+        
+  
+        .summary-box {
+            background-color: var(--soft-pink);
+            padding: 20px;
+            border-left: 5px solid var(--dark-blue);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+   
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; 
+            margin-top: 20px;
+        }
+
+        .info-table tr {
+            background-color: var(--soft-pink);
+            transition: background-color 0.3s;
+        }
+        
+        .info-table tr:hover {
+            background-color: var(--soft-blue);
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px;
+            text-align: left;
+            border: none;
+        }
+        
+        .info-table th {
+            width: 30%;
+            color: var(--dark-blue);
+            font-weight: bold;
+            background-color: var(--soft-blue);
+            border-radius: 8px 0 0 8px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-table td {
+            width: 70%;
+            border-radius: 0 8px 8px 0;
+            background-color: var(--soft-pink);
+        }
+        
+        .info-table i {
+            color: var(--dark-blue);
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+ 
+        .copyright {
+            margin-top: 50px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #F0F0F0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .info-table, .info-table tbody, .info-table tr, .info-table th, .info-table td {
+                display: block;
+                width: 100%;
+            }
+            .info-table tr {
+                margin-bottom: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            .info-table th, .info-table td {
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .info-table th {
+                background-color: var(--soft-blue);
+                border-bottom: 1px solid var(--dark-blue);
+                padding-bottom: 5px;
+            }
+
+        .map-link-btn {
+            background-color: #5C6F78;
+            color: white !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .map-link-btn:hover {
+            background-color: #4A6E82; 
+        }
+ 	}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="entertainment.html">Interests</a> 
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="biodata-container">
+            
+            <h1>👤 My Biodata & Personal Information </h1>
+            
+            <div class="summary-box">
+                <p>I'm Nasha Saliha, an individual with a positive attitude and a strong interest in self-improvement. This biodata contains my personal information, background, and interests, offering a brief introduction about me.</p>
+            </div>
+            
+            <h2>Personal & Basic Information</h2>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <th><i class="fas fa-calendar-alt"></i> Full Name</th>
+                        <td>Nurul Nasha Saliha Binti Hairul Nizam</td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-birthday-cake"></i> Date of Birth</th>
+                        <td>26 September 2005</td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-venus-mars"></i> Gender</th>
+                        <td>Female </td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-ring"></i> Marital Status</th>
+                        <td>Single but currently choosing peace</td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-map-marker-alt"></i> Current Address</th>
+                        <td>
+                            No. 6, Jalan Astakajaya 12, Taman Astakajaya, Buloh Kasap, 85010, Segamat, Johor
+                            <br><br>
+                            <a href="https://www.google.com/maps/search/https://maps.app.goo.gl/8JnSppLJ66xR9mzq6" 
+                               target="_blank" 
+                               class="map-link-btn"
+                               title="View location on map">
+                                <i class="fas fa-map"></i> View Map
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-flag"></i> Nationality</th>
+                        <td>Malaysian</td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-handshake"></i> Religion</th>
+                        <td>Islam</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Contact Details</h2>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <th><i class="fas fa-envelope"></i> Email</th>
+                        <td><a href="mailto:[Your-Email]" style="color: var(--dark-blue); text-decoration: none;">nashasaliha@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-phone"></i> Phone/Mobile</th>
+                        <td>011-10943804</td>
+                    </tr>
+                    <tr>
+                       <th><i class="fab fa-linkedin"></i> LinkedIn</th>
+                        <td><a href="https://www.linkedin.com/in/nasha-saliha-96a765366/" target="_blank" style="color: var(--dark-blue); text-decoration: none;">My-LinkedIn-Profile</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Skills & Languages</h2>
+            <table class="info-table">
+                <tbody>
+                    <tr>
+                        <th><i class="fas fa-cogs"></i> Technical Skills</th>
+                        <td><ol type = 1> 
+		<li>Basic computer & Digital Skills </li> 
+		<li>Information & Documentation Skills</li> 
+		<li>Technology & Software Skills</li>
+		<li>Basic Data & Office Technology</li></td>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-globe"></i> Languages Spoken</th>
+                        <td><ol type = i> 
+		<li>Malay (Fluent)</li> 
+		<li>English (Proficient)</li> 
+		<li>Korean (Limited)</li> 
+		<li> Mandarin, Japanese, Thailand (Basic Daily Conversation) 		</li> </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </section>
+    </main>
+    
+    <div class="copyright">
+        &copy; 2024 Nasha's Space. All rights reserved.
+    </div>
+    
+</body>
+</html>

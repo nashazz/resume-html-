@@ -1,0 +1,362 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name]'s Interests & Entertainment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --soft-blue: #F0D7D0;
+            --soft-pink: #FFF5F2;
+            --soft-grey: #E8E6E8;
+            --dark-blue: #C25B5B;
+            --text-color: #333333;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('bg_entertainment_red.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--soft-blue);
+        }
+
+        .sub-nav {
+            background: var(--soft-pink);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+            border-bottom: 2px solid var(--soft-blue);
+        }
+
+        .sub-nav a {
+            font-size: 0.9em;
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: bold;
+            padding: 5px 12px;
+            border: 1px solid var(--dark-blue);
+            border-radius: 15px;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .entertainment-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .section-title {
+            color: var(--dark-blue);
+            text-align: center;
+            border-bottom: 3px solid var(--soft-blue);
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+
+        .flip-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .grid-7 { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+
+        .card-container {
+            perspective: 1000px;
+            text-align: center;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .card-container:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-front img, .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .card-desc {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .music-item {
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .music-item img {
+            width: 100%;
+            border-radius: 50%; 
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border: 4px solid var(--soft-blue);
+        }
+
+        .music-item:hover { transform: scale(1.05); }
+
+        .profile-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .inspire-item {
+            display: flex;
+            gap: 20px;
+            background: var(--soft-pink);
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 15px;
+            align-items: center;
+        }
+
+        .inspire-img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .inspire-text h4 { margin: 0; color: var(--dark-blue); }
+
+        .copyright {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="entertainment.html">Interests</a> 
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="sub-nav">
+        <a href="#hobbies">Hobbies</a>
+        <a href="#music">Music Corner</a>
+        <a href="#interests">Interests</a>
+        <a href="#inspiration">Inspiration</a>
+    </div>
+
+    <main class="main-content">
+        <section class="entertainment-container">
+            
+            <h1 id="hobbies" class="section-title">🎬 Hobbies & Things I Love</h1>
+            <div class="flip-grid grid-4">
+                <div class="card-container">
+                    <div class="flip-card">
+                        <div class="card-front"><img src="hobby_1a.jpg" alt="Hobby 1"></div>
+                        <div class="card-back"><img src="hobby_1b.jpg" alt="Hobby 1 Secret"></div>
+                    </div>
+                    <div class="card-desc">Reading Books</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card">
+                        <div class="card-front"><img src="hobby_2a.jpg" alt="Hobby 2"></div>
+                        <div class="card-back"><img src="hobby_2b.jpg" alt="Hobby 2 Secret"></div>
+                    </div>
+                    <div class="card-desc">Watching Dramas</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card">
+                        <div class="card-front"><img src="hobby_3a.jpg" alt="Hobby 3"></div>
+                        <div class="card-back"><img src="hobby_3b.jpg" alt="Hobby 3 Secret"></div>
+                    </div>
+                    <div class="card-desc">Listen to Music </div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card">
+                        <div class="card-front"><img src="hobby_4a.jpg" alt="Hobby 4"></div>
+                        <div class="card-back"><img src="hobby_4b.jpg" alt="Hobby 4 Secret"></div>
+                    </div>
+                    <div class="card-desc">Photography</div>
+                </div>
+            </div>
+
+            <h1 id="music" class="section-title">🎵 Music Corner</h1>
+            <div class="music-grid">
+                <a href="https://open.spotify.com/playlist/60vl5ttMgvivSj7VVGHtli?si=8a247b52e5bb49f1" class="music-item">
+                    <img src="music_playlist.jpg" alt="Playlist">
+                    <div class="card-desc">My Playlist</div>
+                </a>
+                <a href="https://open.spotify.com/album/0qGQrHicD7qXuz5VMlDuCe?si=gJI2XNCJTaaD92kvvQzvnQ" class="music-item">
+                    <img src="music_album.jpg" alt="Album">
+                    <div class="card-desc">NEVER ENOUGH</div>
+                </a>
+                <a href="https://open.spotify.com/track/5mtTAScDytxMMqZj14NmlN?si=596609b191a14877" class="music-item">
+                    <img src="music_songs.jpg" alt="Songs">
+                    <div class="card-desc">love-wave to earth</div>
+                </a>
+                <a href="https://open.spotify.com/artist/2u7CP5T30c8ctenzXgEV1W?si=eN9p-zbXRnq8tGsSKrNYmA" class="music-item">
+                    <img src="music_singers.jpg" alt="Singers">
+                    <div class="card-desc">ph-1 </div>
+                </a>
+            </div>
+            <div class="profile-link">
+                <a href="https://open.spotify.com/user/itsnashasaliha?si=b632c85dd7d04b8a" target="_blank" class="spotify-link">
+                    <i class="fab fa-spotify"></i> Visit My Spotify Profile
+                </a>
+            </div>
+
+            <h1 id="interests" class="section-title">🚀 Areas of Personal Interest</h1>
+            <div class="flip-grid grid-7">
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_1a.jpg"></div><div class="card-back"><img src="int_1b.jpg"></div></div>
+                    <div class="card-desc">YouTube</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_2a.jpg"></div><div class="card-back"><img src="int_2b.jpg"></div></div>
+                    <div class="card-desc">Sports</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_3a.jpg"></div><div class="card-back"><img src="int_3b.jpg"></div></div>
+                    <div class="card-desc">Formula 1</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_4a.jpg"></div><div class="card-back"><img src="int_4b.jpg"></div></div>
+                    <div class="card-desc">Cofee Lovers </div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_5a.jpg"></div><div class="card-back"><img src="int_5b.jpg"></div></div>
+                    <div class="card-desc">Sunsetz</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_6a.jpg"></div><div class="card-back"><img src="int_6b.jpg"></div></div>
+                    <div class="card-desc">Film Camera</div>
+                </div>
+                <div class="card-container">
+                    <div class="flip-card"><div class="card-front"><img src="int_7a.jpg"></div><div class="card-back"><img src="int_7b.jpg"></div></div>
+                    <div class="card-desc">K-pop</div>
+                </div>
+            </div>
+
+            <h1 id="inspiration" class="section-title">💡 Inspiration: My Favorite Media</h1>
+            
+            <div class="inspire-item">
+                <img src="fav_film.jpg" class="inspire-img">
+                <div class="inspire-text">
+                    <h4>Favorite Series: When I Fly Towards You </h4>
+                    <p>I love this series because its just scream what types of love I want like  Zhang Lu Rang! </p>
+                </div>
+            </div>
+
+            <div class="inspire-item">
+                <img src="fav_artist.jpg" class="inspire-img">
+                <div class="inspire-text">
+                    <h4>Favorite Artist/Band:NCT DREAM , JAEMIN</h4>
+                    <p>His music resonates with me, because he inspire me to be myself. </p>
+                </div>
+            </div>
+
+            <div class="inspire-item">
+                <img src="fav_book.jpg" class="inspire-img">
+                <div class="inspire-text">
+                    <h4>Favorite Author/Book: Siri Jalanan by Teme Abudllah </h4>
+                    <p>This book changed my perspective on everything about life and I admire Teme's style of work.</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    <div class="copyright">
+        &copy; 2024 Nasha's Space. All rights reserved.
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,339 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - [Your Name]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --main-green: #1B5E20; 
+            --light-green: #E8F5E9; 
+            --background-soft: #F9FFF9; 
+            --off-white: #FFFFFF;
+            --text-color: #8FBC8F; 
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            
+            background-image: url('bg_experience.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #8FBC8F; 
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.85); 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--main-green);
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--light-green);
+            color: var(--main-green);
+        }
+        
+        .music-player {
+            text-align: center;
+            margin: 0 auto 30px auto;
+            max-width: 400px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: var(--light-green);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-player p {
+            color: var(--main-green);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .music-player audio {
+            width: 90%;
+            height: 40px;
+            background-color: var(--off-white);
+            border-radius: 20px;
+            padding: 5px;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 50px 20px;
+        }
+
+        .experience-container {
+            background-color: var(--off-white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            color: var(--text-color); 
+        }
+        
+
+        .experience-container h1 {
+            color: var(--main-green);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--light-green);
+            padding-bottom: 10px;
+        }
+
+        .experience-container p, .experience-container strong, .experience-container li {
+            color: #333333; 
+        }
+
+        .key-responsibilities li i {
+            color: var(--main-green);
+        }
+     
+        .media-item p {
+            color: #666;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 40px;
+        }
+
+        .experience-card {
+            background-color: var(--off-white);
+            border: 1px solid var(--light-green);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background-color: var(--light-green);
+            padding: 15px 20px;
+            color: var(--main-green);
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        
+        .card-header p {
+            font-style: italic;
+            margin: 5px 0 0 0;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+
+        .media-holder {
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px; 
+            align-items: center;
+        }
+
+        .media-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .media-holder img, 
+        .media-holder video {
+            width: 100%;
+            height: auto;
+            max-height: 250px; 
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .media-item p {
+            font-size: 0.8em; 
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .key-responsibilities {
+            margin-top: 15px;
+        }
+
+        .key-responsibilities ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-responsibilities li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .key-responsibilities li i {
+            color: var(--main-green);
+            margin-right: 8px;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-color); 
+            width: 100%;
+        }
+        
+        @media screen and (max-width: 480px) {
+             .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="entertainment.html">Interests</a> 
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="experience-container">
+            
+            <h1><i class="fas fa-briefcase"></i> My Internships & Outreach Programs Experience</h1>
+            
+            <div class="music-player">
+                <p><i class="fas fa-compact-disc"></i>  (*^▽^)/★*☆♪  <i class="fas fa-compact-disc"></i> </p>
+                <audio controls>
+                    <source src="your_music_file.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="experience-grid">
+                
+                <div class="experience-card">
+                    <div class="card-header">
+                        <h2>Information Management Intern </h2>
+                        <p>@Netherland Maritime University College | [28/7/2025] - [19/9/2025]</p>
+                    </div>
+                    <div class="card-body">
+                        <p>Short Internship that make me gain experience and learning a lot of things about adulting and working. </p>
+                        
+                        <div class="media-holder">
+                            <div class="media-item">
+                                <img src="internship_photo_1.jpg" alt="Photo of my internship project" loading="lazy">
+                                <p>(Unicorn Team)</p>
+                            </div>
+                            
+                            <div class="media-item">
+                                <img src="internship_photo_2.jpg" alt="Photo of the team" loading="lazy">
+                                <p>(Outreach Program at SSI)</p>
+                            </div>
+
+                            <div class="media-item">
+                                <img src="internship_photo_3.jpg" alt="Photo of the team" loading="lazy">
+                                <p>(ICLMP)</p>
+                            </div>
+
+                        </div>
+                        
+                        <div class="key-responsibilities">
+                            <strong>Key Projects & Contributions:</strong>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Getting to know a lot of new people.</li>
+                                <li><i class="fas fa-check-circle"></i> Program Director for an Outreach Program at SSI , Kulai</li>
+                                <li><i class="fas fa-check-circle"></i> Involving in International Youth Conference Maritim & Logistic </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="card-header">
+                        <h2>Outreach Program </h2>
+                        <p>@ RiseWith5E / SMK Malim | 2025</p>
+                    </div>
+                    <div class="card-body">
+                        <p> Involving in Protocol and Events team and becoming an MC for the program. </p>
+                        
+                        
+                        <div class="media-holder">
+                            <div class="media-item">
+                                <img src="outreach_photo_1.jpg" alt="Highlights photo from outreach program" loading="lazy">
+                                <p>(MC for the Day!)</p>
+                            </div>
+
+                            <div class="media-item">
+                                <img src="outreach_photo_group.jpg" alt="Group photo from outreach" loading="lazy">
+                                <p>JCDIM1105E</p>
+                            </div>
+                        </div>
+
+
+                        <div class="key-responsibilities">
+                            <strong>Key Responsibilities & Achievements:</strong>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Led a total of 200 students of SMK Malim. </li>
+                                <li><i class="fas fa-check-circle"></i> Managed to finish the program without any big problem. </li>
+                                <li><i class="fas fa-check-circle"></i> Receive a positive feedback from the students. </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    
+    <div class="copyright">
+        &copy; 2024 Nasha's Space. All rights reserved.
+    </div>
+    
+</body>
+</html>
